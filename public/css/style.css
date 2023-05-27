@@ -1,0 +1,492 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+
+.searchContainer {
+    width: 40%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 35px;
+}
+
+@media (max-width: 767px) {
+
+    .searchContainer {
+        border-radius: 15px;
+        width: 80%;
+    }
+
+}
+
+.searchContainer input {
+    border: none;
+    outline: none;
+    border-right: 1px solid #ddd;
+    width: 90%;
+}
+
+.searchContainer div {
+    width: 10%;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e13ed6b5;
+    padding: 40px;
+    z-index: 999;
+    text-align: center;
+}
+
+.overlay p:nth-child(1) {
+    letter-spacing: 2px;
+}
+
+.overlay p:nth-child(2) {
+    letter-spacing: 5px;
+}
+
+.title {
+    letter-spacing: 10px;
+    color: #e680e0;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: 1px solid #212529;
+    color: #212529;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #212529;
+    color: white;
+}
+
+@media (max-width:1200px) {
+
+    .largePhoto {
+        max-width: 100%;
+    }
+}
+
+.model {
+    position: relative;
+}
+
+.modelOverlay {
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background-color: #2125296f;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.modelOverlay button {
+    color: white;
+    border: 1px solid white;
+    padding: 8px 15px;
+    transition: 0.5s;
+}
+
+.modelOverlay button:hover {
+    color: #333;
+    background-color: white;
+    border: 1px solid white;
+    padding: 8px 15px;
+}
+
+.model:hover .modelOverlay {
+    opacity: 1;
+}
+
+
+.items::after {
+    content: "";
+    position: absolute;
+    width: calc(50% - 150px);
+    height: 4px;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    border: 1px solid black;
+}
+
+.items::before {
+    content: "";
+    position: absolute;
+    width: calc(50% - 150px);
+    height: 4px;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    border: 1px solid black;
+}
+
+.image {
+    width: 100%;
+    min-height: 200px;
+    position: relative;
+}
+
+
+.itemOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.image:hover .itemOverlay {
+    opacity: 1;
+}
+
+.eye {
+    width: 90px;
+    height: 120px;
+    background-color: #212529ae;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.heart:hover {
+    color: red;
+}
+
+.cart:hover {
+    color: #e13ed7;
+}
+
+.iconCartActive {
+    color: #e13ed7;
+}
+
+.share:hover {
+    color: rgb(30, 94, 233);
+}
+
+.star {
+    color: #ccc;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.star:hover {
+    color: #aaa;
+}
+
+.imageBanner::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #21252978;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imageOne::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid white;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    right: 25%;
+}
+
+.imageOne .sale {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateX(-50%);
+}
+
+.rotate {
+    transform: rotate(-90deg);
+}
+
+.imageTwo .sale {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+@media (max-width:767px) {
+
+    .imageTwo .sale {
+        top: 35%;
+    }
+}
+
+.imageTwo::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 15px solid transparent;
+    border-top: 15px solid white;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 25%;
+}
+
+.quote {
+    background-image: url("../images/car02.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    position: relative;
+    z-index: 99;
+}
+
+.quote .quoteOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #21252978;
+    z-index: 1;
+}
+
+.quote .content {
+    position: relative;
+    z-index: 199;
+}
+
+.quote .content h1 {
+    padding: 0 0 70px;
+    color: #e680e0;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.quote .content p {
+    padding: 0 140px;
+
+}
+
+.footerItem {
+    color: #a8a8a8;
+}
+
+.footerButton {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px 15px;
+    color: #ffffff;
+    background-color: #e13ed7;
+    transition: 0.5s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.footerButton:hover {
+    background-color: #e13ed6d9;
+    color: white;
+}
+
+.footerInput {
+    border: 1px solid #a8a8a8;
+    outline: none;
+
+}
+
+.masterCardIcon {
+    background-color: #a8a8a8;
+    color: black;
+}
+
+/* dashboard */
+
+.dashboard {
+    grid-auto-rows: minmax(80px, auto);
+    grid-auto-columns: minmax(10vw, 25vw);
+    grid-template-areas:
+        "topbar topbar topbar topbar"
+        "sidebar dashcontent dashcontent dashcontent";
+}
+
+.topBar {
+    grid-area: topbar;
+}
+
+.sideBar {
+    grid-area: sidebar;
+    min-height: 100vh;
+}
+
+
+.sideBar a {
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    display: block;
+    margin: 10px 0;
+    transition: 0.4s;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sideBar a:hover {
+    background-color: #373c42;
+}
+
+@media (max-width: 767px) {
+    .sideBar a {
+        font-size: 12px;
+        font-weight: 600;
+        color: white;
+        display: block;
+        margin: 10px 0;
+        transition: 0.4s;
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+
+.content {
+    grid-area: dashcontent;
+}
+
+.bg-ee {
+    background-color: #ddd;
+}
+
+.link {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    transition: 0.5s;
+}
+
+.link:hover {
+    background-color: #ddd;
+}
+
+.link a {
+    color: #212529;
+}
+
+.arrow {
+    width: 5px;
+    height: 5px;
+    border: 5px solid transparent;
+    border-top: 5px solid #aaa;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#profileButton {
+    width: fit-content;
+    background-color: #e13ed7;
+    color: white;
+    transition: 0.5s;
+}
+
+#profileButton:hover {
+    background-color: #e13ed6d9;
+    color: white;
+}
+
+.dashLink {
+    text-decoration: none;
+}
+
+.show {
+    left: -135px !important;
+    z-index: 99999;
+}
+
+.alertContainer {
+    top: 15%;
+    z-index: 99999;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.alertContainerDash {
+    z-index: 99999;
+    margin: 0 auto;
+    width: 75%;
+}
+
+@media (max-width: 767px) {
+
+    .alertContainerDash {
+        z-index: 99999;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .tableContainer{
+        width: 100%;
+        overflow: scroll;
+    }
+}
+
+#keyword:focus {
+    outline: none;
+    border: none;
+    --tw-ring-color: transparent;
+}
